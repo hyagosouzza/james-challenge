@@ -2,25 +2,42 @@
 
 Projeto Angular 10 com Angular Material.
 
+### Rodando o servidor localmente
+
+Caso você não tenha o `@angular/cli` em sua máquina, será necessário instalá-lo através do comando `npm install -g @angular/cli
+`. Ou acessse https://cli.angular.io.
+
+Consequentemente, ``npm`` e ``node`` também são necessários. Caso também não os tenha, veja https://nodejs.org/en/download/.
+
 Para rodar o servidor, siga os comandos abaixo:
 
 ````
 npm i
 ng serve
 ````
-
+Ou
+````
+yarn install
+yarn start
+````
 O comando `npm i` irá instalar as dependências necessárias para o projeto, enquanto o comando `ng serve` inicia o
 servidor na porta `http://localhost:4200`.
 
-Caso você não tenha o `@angular/cli` em sua máquina, será necessário instalá-lo através do comando `npm install -g @angular/cli
-`. Ou acessse https://cli.angular.io.
+### Gerando artefatos de deploy
 
-Consequentemente, ``npm`` e ``node`` também são necessários. Caso também não os tenha, veja https://nodejs.org/en/download/.
- 
-### Sobre a listagem de produtos
-Deveria haver uma paginação do angular material, mas por conta de algum bug onde não consegui encontrar solução no
-Stackoverflow/Documentação, o paginator não consegue ser criado. Gastei horas neste problema, mesmo tendo feito em
-outros projetos, imagino que seja problema com alguma dependência. De qualquer forma, deixei um tamanho fixo para a
-tabela, para que ela não cresca para sempre na tela. Além disso o backend traz 1000 linhas por padrão, ordendo do mais
-recente ao menos recente (paginação no backend funciona). Como evolução do projeto, implementar o paginator do angular
-material ou manualmente.
+Para buildar o projeto e gerar os artefatos necessários para fazer o deploy da aplicação, rode os comandos abaixo:
+
+````
+npm i
+npm run build
+````
+
+Os artefatos serão gerados na pasta ``/dist`` na raiz do projeto.
+
+### Sobre o pacote james-challenge-client
+É um projeto gradle que criei para gerar uma inteface de comunicação entre o front-end e o a API.
+Utilizando a especificação OpenApi em um arquivo ``.yaml``, os serviços e modelos especificados são gerados automaticamente
+após um script de build, após isso, o comando ``npm run build`` faz o build dessas classes para um plugin typescript,
+podendo ser utilizado em projetos angular.
+
+Este plugin está publicado no npm https://www.npmjs.com/package/james-challenge-client, atualmente na versão 2.0.0
