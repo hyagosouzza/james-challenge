@@ -1,0 +1,19 @@
+@import "src/assets/sass/colors";
+@import "src/assets/sass/mixins";
+
+$text-color: whitesmoke;
+
+.navbar {
+  @include flexCenter(space-between);
+  background-color: $dark-main;
+
+  &__left {
+    padding: 5px 10px 5px 0;
+    border-right: 1px solid $text-color;
+
+    &-title {
+      color: $text-color;
+    }
+  }
+
+}

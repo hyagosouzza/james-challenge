@@ -1,0 +1,35 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/theming';
+@import 'assets/sass/colors';
+@import 'assets/sass/mixins';
+
+@include mat-core();
+
+$candy-app-primary: mat-palette($mat-indigo);
+$candy-app-accent: mat-palette($mat-green, A200, A100, A400);
+
+$candy-app-warn: mat-palette($mat-red);
+
+$custom-typography: mat-typography-config($font-family: '"Noto Sans", sans-serif;');
+@include mat-core($custom-typography);
+
+$candy-app-theme: mat-light-theme((
+        color: (
+                primary: $candy-app-primary,
+                accent: $candy-app-accent,
+                warn: $candy-app-warn,
+        )
+));
+
+@include angular-material-theme($candy-app-theme);
+
+html, body {
+  width: 100%;
+  height: 100%;
+  @include default-background;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

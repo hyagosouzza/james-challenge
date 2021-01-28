@@ -1,0 +1,12 @@
+@import "src/assets/sass/colors";
+@import "src/assets/sass/mixins";
+
+.establishment-table {
+  margin-top: 20px;
+  padding: 24px;
+
+  &__header {
+    @include page-header;
+    justify-content: space-between;
+  }
+}

@@ -1,0 +1,18 @@
+@import "src/assets/sass/mixins";
+
+.loader {
+  margin: 10px 0;
+}
+
+.list-container {
+  max-height: 600px;
+  overflow: auto;
+  margin-top: 10px;
+}
+
+.noData {
+  margin-top: 20px;
+  @include flexCenter();
+  font-style: italic;
+  font-size: 1.2em;
+}

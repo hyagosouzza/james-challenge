@@ -1,0 +1,27 @@
+@import "src/assets/sass/mixins";
+@import "src/assets/sass/colors";
+
+div:first-of-type {
+  font-family: "Nunito Sans";
+  @include fullPage;
+  @include flexCenter;
+
+  mat-card {
+    box-shadow: $shadow;
+    width: 25em;
+    height: 300px;
+    @include flexCenter;
+    flex-direction: column;
+  }
+
+  h1 {
+    font-size: 7.5em;
+    font-weight: bold;
+    height: 1em;
+  }
+
+  h2 {
+    font-size: 2em;
+    font-weight: bold;
+  }
+}

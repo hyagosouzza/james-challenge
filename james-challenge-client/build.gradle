@@ -1,0 +1,20 @@
+plugins {
+    // versão onde o explode funciona com objetos
+    id "org.openapi.generator" version "5.0.0"
+}
+
+openApiGenerate {
+    generatorName = "typescript-angular"
+    inputSpec = "$rootDir/api.yaml".toString()
+    outputDir = "$rootDir".toString()
+    skipValidateSpec = true
+    typeMappings.put("date", "string")
+    typeMappings.put("DateTime", "Date")
+    additionalProperties = [
+            modelPropertyNaming: 'original',
+            enumPropertyNaming : 'UPPERCASE'
+    ]
+}
+
+group = 'com.github.hyagosouzza'
+version = '1.0.0-SNAPSHOT'

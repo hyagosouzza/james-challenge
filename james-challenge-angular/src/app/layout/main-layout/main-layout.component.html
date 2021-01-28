@@ -1,0 +1,17 @@
+<jc-navbar></jc-navbar>
+<mat-drawer-container>
+    <mat-drawer mode="side" opened>
+        <div class="options" *ngFor="let page of pages">
+            <button mat-fab [routerLink]="page.router">
+                <a>
+                    <mat-icon [matTooltip]="page.tooltip" matTooltipPosition="right">{{page.icon}}</mat-icon>
+                </a>
+            </button>
+        </div>
+    </mat-drawer>
+    <mat-drawer-content>
+        <div class="content">
+            <ng-content select="[page]"></ng-content>
+        </div>
+    </mat-drawer-content>
+</mat-drawer-container>

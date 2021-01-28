@@ -1,0 +1,9 @@
+@import "src/assets/sass/colors";
+
+.dialog-title {
+
+  &__header {
+    border-bottom: 1px solid $default-gray;
+  }
+
+}

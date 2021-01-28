@@ -1,0 +1,76 @@
+openapi: 3.0.1
+info:
+  title: james-challenge
+  version: 1.0.0
+servers:
+  - url: https://my-json-server.typicode.com/james-delivery/frontend-challenge
+    variables: { }
+paths:
+  /establishments:
+    get:
+      tags:
+        - establishment
+      summary: Obtém estabalecimentos
+      description: Retorna todos os estabelecimentos disponíveis
+      operationId: findAll
+      responses:
+        "200":
+          description: Ok
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Establishment'
+  /establishments/{id}:
+    get:
+      tags:
+        - establishment
+      summary: Obtém um estabalecimento
+      description: Retorna um estabelecimento específico pelo ID
+      operationId: findById
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Establishment'
+components:
+  schemas:
+    Establishment:
+      type: object
+      properties:
+        id:
+          type: string
+        index:
+          type: integer
+          format: int32
+        guid:
+          type: string
+          format: uuid
+        picture:
+          type: string
+        name:
+          type: string
+        email:
+          type: string
+          format: email
+        phone:
+          type: string
+          pattern: '[\+]\d{1,}\s?[\(]\d{2,}[\)]\s?\d{3,}[\-]\d{4,}'
+        address:
+          type: string
+        registered:
+          type: string
+        latitude:
+          type: string
+        longitude:
+          type: string
+    EstablishmentArray:

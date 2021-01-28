@@ -1,0 +1,11 @@
+<mat-progress-bar *ngIf="dataSource?.loadingIndicator" mode="query" class="loader"></mat-progress-bar>
+
+<div class="list-container" *ngIf="dataSource && dataSource.data">
+    <ng-container *ngFor="let establishment of dataSource.data">
+        <jc-establishment-list-item [establishment]="establishment"></jc-establishment-list-item>
+    </ng-container>
+</div>
+
+<div class="noData">
+    <p *ngIf="!dataSource?.data?.length && !dataSource?.loadingIndicator">No establishments found</p>
+</div>

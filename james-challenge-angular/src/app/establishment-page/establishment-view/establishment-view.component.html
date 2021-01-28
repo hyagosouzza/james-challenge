@@ -1,0 +1,106 @@
+<mat-card *ngIf="establishmentForm">
+    <div class="establishment-visualization__header">
+        <div>
+            <span class="establishment-visualization__header-title">{{title}}</span>
+        </div>
+        <div class="establishment-visualization__header-back">
+            <button mat-raised-button
+                    color="primary"
+                    type="button"
+                    (click)="backToList()"
+                    title="Navigate to establishments">
+                Back
+            </button>
+        </div>
+    </div>
+    <div class="establishment-visualization__form">
+        <form (ngSubmit)="submit()" [formGroup]="establishmentForm">
+            <div>
+                <mat-form-field appearance="outline">
+                    <mat-label>ID</mat-label>
+                    <input matInput type="text" formControlName="id" readonly>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Index</mat-label>
+                    <input matInput type="number" formControlName="index" readonly>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Guid</mat-label>
+                    <input matInput type="text" formControlName="guid" readonly>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field appearance="outline">
+                    <mat-label>Name</mat-label>
+                    <input matInput type="text" formControlName="name">
+                    <mat-hint *ngIf="requiredValidation('name')">
+                        <ng-container *ngTemplateOutlet="hint"></ng-container>
+                    </mat-hint>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Picture</mat-label>
+                    <input matInput type="text" formControlName="picture">
+                    <mat-hint *ngIf="requiredValidation('picture')">
+                        <ng-container *ngTemplateOutlet="hint"></ng-container>
+                    </mat-hint>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field appearance="outline">
+                    <mat-label>Email</mat-label>
+                    <input matInput type="email" formControlName="email">
+                    <mat-hint *ngIf="emailValidation('email')">
+                        This field must be an email.
+                    </mat-hint>
+                    <mat-hint *ngIf="requiredValidation('email')">
+                        <ng-container *ngTemplateOutlet="hint"></ng-container>
+                    </mat-hint>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Phone</mat-label>
+                    <input matInput type="email" formControlName="phone">
+                    <mat-hint *ngIf="requiredValidation('phone')">
+                        <ng-container *ngTemplateOutlet="hint"></ng-container>
+                    </mat-hint>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Address</mat-label>
+                    <input matInput type="text" formControlName="address">
+                    <mat-hint *ngIf="requiredValidation('address')">
+                        <ng-container *ngTemplateOutlet="hint"></ng-container>
+                    </mat-hint>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field appearance="outline">
+                    <mat-label>Registered</mat-label>
+                    <input matInput type="text" formControlName="registered">
+                    <mat-hint *ngIf="requiredValidation('registered')">
+                        <ng-container *ngTemplateOutlet="hint"></ng-container>
+                    </mat-hint>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Latitude</mat-label>
+                    <input matInput type="text" formControlName="latitude">
+                    <mat-hint *ngIf="requiredValidation('latitude')">
+                        <ng-container *ngTemplateOutlet="hint"></ng-container>
+                    </mat-hint>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Longitude</mat-label>
+                    <input matInput type="text" formControlName="longitude">
+                    <mat-hint *ngIf="requiredValidation('longitude')">
+                        <ng-container *ngTemplateOutlet="hint"></ng-container>
+                    </mat-hint>
+                </mat-form-field>
+            </div>
+            <div class="establishment-visualization__form-footer">
+                <button mat-raised-button color="accent" [disabled]="establishmentForm.invalid">Save</button>
+            </div>
+        </form>
+    </div>
+</mat-card>
+
+<ng-template #hint>
+    <mat-hint>This field cannot be empty.</mat-hint>
+</ng-template>

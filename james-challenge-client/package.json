@@ -1,0 +1,33 @@
+{
+  "name": "james-challenge-client",
+  "version": "2.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "es2015": "dist/index.js",
+  "typings": "dist/index.ts",
+  "scripts": {
+    "build": "ngc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Hyago Souza",
+  "license": "ISC",
+  "peerDependencies": {
+    "@angular/common": "~10.0.2",
+    "@angular/compiler": "~10.0.2",
+    "rxjs": "~6.6.0",
+    "zone.js": "~0.10.2",
+    "@angular/core": "~10.0.2"
+  },
+  "devDependencies": {
+    "@angular/common": "~10.0.2",
+    "@angular/compiler": "~10.0.2",
+    "@angular/core": "~10.0.2",
+    "@angular/compiler-cli": "~10.0.2",
+    "@angular/cli": "~10.0.2",
+    "rimraf": "^2.6.3",
+    "rxjs": "~6.6.0",
+    "typescript": "~3.9.2",
+    "zone.js": "~0.10.2"
+  }
+}

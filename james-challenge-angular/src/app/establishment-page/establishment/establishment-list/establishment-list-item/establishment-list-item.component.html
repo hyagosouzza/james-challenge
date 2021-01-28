@@ -1,0 +1,9 @@
+<mat-card (click)="edit()">
+    <mat-card-header>
+        <div mat-card-avatar>
+            <img [src]="establishment?.picture" [alt]="'Image of ' + establishment.name">
+        </div>
+        <mat-card-title>{{establishment?.name}}</mat-card-title>
+        <mat-card-subtitle>{{establishment?.address}}</mat-card-subtitle>
+    </mat-card-header>
+</mat-card>

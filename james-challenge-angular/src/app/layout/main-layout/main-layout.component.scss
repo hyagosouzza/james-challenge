@@ -1,0 +1,28 @@
+@import "src/assets/sass/mixins";
+@import "src/assets/sass/colors";
+
+mat-drawer-container {
+  height: 100%;
+
+  mat-drawer-content {
+    @include default-background(whitesmoke);
+
+    .content {
+      margin: 20px;
+    }
+  }
+
+  .options {
+    padding: 10px;
+
+    button {
+      background-color: darken($main, 15%);
+
+      mat-icon {
+        color: $accent;
+      }
+    }
+
+  }
+
+}

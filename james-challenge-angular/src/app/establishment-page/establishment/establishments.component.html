@@ -1,0 +1,16 @@
+<mat-card class="establishment-table">
+    <div>
+        <div class="establishment-table__header">
+            <div>
+                <mat-icon>topic</mat-icon>
+                <span class="establishment-table__header-title">Establishments</span>
+            </div>
+            <div>
+                <button mat-mini-fab color="accent" (click)="refresh()">
+                    <mat-icon matTooltip="Refresh" matTooltipPosition="below">refresh</mat-icon>
+                </button>
+            </div>
+        </div>
+        <jc-establishment-list [filter]="command.asObservable()" (refresh)="refresh"></jc-establishment-list>
+    </div>
+</mat-card>
