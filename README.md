@@ -40,4 +40,5 @@ Utilizando a especificação OpenApi em um arquivo ``.yaml``, os serviços e mod
 após um script de build, após isso, o comando ``npm run build`` faz o build dessas classes para um plugin typescript,
 podendo ser utilizado em projetos angular.
 
-Este plugin está publicado no npm https://www.npmjs.com/package/james-challenge-client, atualmente na versão 2.0.0
+Este plugin está publicado no npm https://www.npmjs.com/package/james-challenge-client, atualmente na versão 2.0.0.
+Repositório aqui https://github.com/hyagosouzza/james-challenge-client.
